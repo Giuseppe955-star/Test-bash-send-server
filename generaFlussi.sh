@@ -11,13 +11,13 @@ java -cp TediInterface.jar it.archibus.tedi.FlussiForTEDI >> interfacciaTedi.log
 
 touch Tedisftp.log
 
-cd /data_mount/batch/InterfacciaTEDI/test/
+cd [ Path ]
 
 touch  siti_$DATE_DIR.csv.ok
 touch  immobili_$DATE_DIR.csv.ok
 touch  edifici_$DATE_DIR.csv.ok
 
-/usr/bin/expect << EOF >> /data_mount/batch/InterfacciaTEDI/Tedisftp.log 2>&1
+/usr/bin/expect << EOF >> [Path]/Tedisftp.log 2>&1
 
 spawn /usr/bin/sftp -o Port=$PORT $USER@$HOST
 expect "sftp>"
